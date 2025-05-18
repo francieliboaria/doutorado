@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8">
+	<title>Relatório da Avaliação</title>
+    <script src="funcoes.js"></script>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			line-height: 1.15;
+		}
+
+		table {
+			width: 100%;
+			border-collapse: collapse;
+			margin-top: 1em;
+		}
+
+		th, td {
+			border: 1px solid #000;
+			padding: 0.4em;
+			vertical-align: top;
+		}
+
+		.cabecalho {
+			background-color: #2a6099;
+			color: white;
+			text-align: center;
+			font-weight: bold;
+		}
+
+		.titulo-dimensao {
+			font-size: 1rem;
+		}
+
+		.alinha-direita {
+			text-align: right;
+		}
+        #imagem{
+            text-align: center;
+        }
+	</style>
+</head>
+<body onload="relatorio()">
+
+<table>
+	<tr>
+        <td colspan="3" class="cabecalho"><h1>Relatório da Avaliação</h1></td>
+	</tr>
+
+	<tr>
+		<td><h2>Perspectivas</h2></td>
+		<td><h2>Total</h2></td>
+		<td rowspan="6" id="imagem">
+
+        </td>
+	</tr>
+
+	<tr>
+		<td class="titulo-dimensao">Inovação e Sustentabilidade Organizacional (dimensão ORGANIZACIONAL)</td>
+		<td id="1"></td>
+	</tr>
+
+	<tr>
+		<td class="titulo-dimensao">Estratégia Digital Sustentável (dimensão ESTRATÉGIA)</td>
+		<td id="2"></td>
+	</tr>
+
+	<tr>
+		<td class="titulo-dimensao">Governança Digital Sustentável (dimensão GOVERNANÇA)</td>
+		<td id="3"></td>
+	</tr>
+
+	<tr>
+		<td class="titulo-dimensao">Tecnologia e Gestão Organizacional para Sustentabilidade (dimensão TECNOLOGIA)</td>
+		<td id="4"></td>
+	</tr>
+
+	<tr>
+		<td class="titulo-dimensao">Inovação Digital centrada no Cliente (dimensão FOCO NO CLIENTE)</td>
+		<td id="5"></td>
+	</tr>
+
+	<tr>
+		<td class="alinha-direita"><strong>Total</strong></td>
+		<td colspan="2" id="total"></td>
+	</tr>
+</table>
+
+</body>
+</html>
