@@ -2,23 +2,29 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>type="radio"</title>
+  <title>Estratégia Digital Sustentável (dimensão ESTRATÉGIA)</title>
   <link rel="stylesheet" href="estilo.css">
   <script src="funcoes.js"></script>
 
 </head>
-<body>
-  <h2>Estratégia Digital Sustentável (dimensão ESTRATÉGIA)</h2>
+<body onload="recuperaSessaoNome()">
+<div id="cabecalho">
+  <h2>Perspectiva 2: Estratégia Digital Sustentável (dimensão ESTRATÉGIA)</h2>
+  <div id="imagem">
+    <img src="img/hotel.png"><br><label id="nomeHotel"></label>
+  </div>
+  </div>
   <form>
     <table>
       <thead>
         <tr>
-          <th>Pergunta</th>
+          <th colspan="2">Pergunta</th>
           <th class="center">Nível de Aplicação (0 a 5)</th>
         </tr>
       </thead>
       <tbody>
         <tr>
+          <td width="10px">1</td>
           <td>A transformação digital é uma prioridade estratégica, integrando-se a todas as áreas para impulsionar a sustentabilidade.</td>
           <td class="center likert">
             <label><input type="radio"  name="q1" value="1"> 1</label>
@@ -30,6 +36,7 @@
           </td>
         </tr>
         <tr>
+          <td width="10px">2</td>
           <td>A alta administração assegura investimentos e recursos, promovendo reuniões periódicas para alinhar o uso de tecnologias digitais aos objetivos sustentáveis.</td>
           <td class="center likert">
             <label><input type="radio"  name="q2" value="1"> 1</label>
@@ -41,6 +48,7 @@
           </td>
         </tr>
         <tr>
+          <td width="10px">3</td>
           <td>A estratégia competitiva da organização está fundamentada na adoção de tecnologias digitais que reduzem custos, melhoram a qualidade dos serviços e reforçam a liderança de mercado.</td>
           <td class="center likert">
             <l<label><input type="radio"  name="q3" value="1"> 1</label>
@@ -52,6 +60,7 @@
           </td>
         </tr>
         <tr>
+          <td width="10px">4</td>
           <td>A seleção de funcionários valoriza habilidades digitais para apoiar metas sustentáveis da organização.</td>
           <td class="center likert">
             <label><input type="radio"  name="q4" value="1"> 1</label>
@@ -63,6 +72,7 @@
           </td>
         </tr>
         <tr>
+          <td width="10px">5</td>
           <td>Estabelecemos parcerias com fornecedores que agregam valor por meio de competências digitais para a sustentabilidade.</td>
           <td class="center likert">
             <label><input type="radio"  name="q5" value="1"> 1</label>
@@ -74,6 +84,7 @@
           </td>
         </tr>
         <tr>
+          <td width="10px">6</td>
           <td>Consultores externos auxiliam na formulação de políticas e programas para a sustentabilidade, incluindo iniciativas de transformação digital.</td>
           <td class="center likert">
             <label><input type="radio"  name="q6" value="1"> 1</label>
@@ -85,6 +96,7 @@
           </td>
         </tr>
         <tr>
+          <td width="10px">7</td>
           <td>A digitalização de processos gera eficiência operacional, otimizando consumo energético e monitorando impactos ambientais.</td>
           <td class="center likert">
             <label><input type="radio"  name="q7" value="1"> 1</label>
@@ -96,6 +108,7 @@
           </td>
         </tr>
         <tr>
+          <td width="10px">8</td>
           <td>O modelo de negócios é transformado por meio de plataformas integradas e estratégias sustentáveis, garantindo desempenho organizacional aprimorado e vantagem competitiva.</td>
           <td class="center likert">
             <label><input type="radio"  name="q8" value="1"> 1</label>
@@ -107,6 +120,7 @@
           </td>
         </tr>
         <tr>
+          <td width="10px">9</td>
           <td>A liderança de mercado e a qualidade do serviço são reforçadas pelo cumprimento de objetivos mensuráveis e pela avaliação do desempenho baseada na satisfação de clientes e parceiros.</td>
           <td class="center likert">
             <label><input type="radio"  name="q9" value="1"> 1</label>
@@ -119,7 +133,8 @@
         </tr>
       </tbody>
     </table>
-    <br><button type="button" id="1" onclick="modeloCalculo();somaIndividual(this);location.href='pagina3.html'">Próxima Página</button>
+    <button type="button" id="2" onclick="location.href='pagina1.html';">Voltar</button>
+    <button type="button" id="2" onclick="if(validarRespostas()){modeloCalculo();somaIndividual(this);location.href='pagina3.html';}">Próxima página</button>
   </form>
 </body>
 </html>

@@ -5,22 +5,27 @@
   <title>Inovação e Sustentabilidade Organizacional</title>
 <link rel="stylesheet" href="estilo.css">
   <script src="funcoes.js"></script>
-  <script>
-      localStorage.clear();
-  </script>
+
 </head>
-<body>
-  <h2>Inovação e Sustentabilidade Organizacional</h2>
+<body onload="recuperaSessaoNome()">
+<div id="alerta"></div>
+   <div id="cabecalho">
+  <h2>Perspectiva 1: Inovação e Sustentabilidade Organizacional</h2>
+    <div id="imagem">
+      <img src="img/hotel.png"><br><label id="nomeHotel"></label>
+    </div>
+   </div>
   <form>
     <table>
       <thead>
         <tr>
-          <th>Pergunta</th>
+          <th colspan="2">Pergunta</th>
           <th class="center">Nível de Aplicação (1 a 5)</th>
         </tr>
       </thead>
       <tbody>
         <tr>
+          <td width="10px">1</td>
           <td>A gestão do conhecimento e a tomada de decisão são facilitadas por tecnologias digitais, permitindo avaliação de riscos para inovação, e adaptando-se às necessidades da empresa, da sociedade e do meio ambiente.</td>
           <td class="center likert">
 
@@ -32,6 +37,7 @@
           </td>
         </tr>
         <tr>
+          <td width="10px">2</td>
           <td>Investimos em educação e treinamento digital em todos os níveis, incentivando a inovação em processos e serviços e fortalecendo uma cultura sustentável.</td>
           <td class="center likert">
             <label><input type="radio" name="q2" value="1"> 1</label>
@@ -42,6 +48,7 @@
           </td>
         </tr>
         <tr>
+          <td width="10px">3</td>
           <td>A transformação digital é estratégica e contínua, garantindo a implementação eficaz de inovações, como sensores e sistemas inteligentes que monitoram e reduzem o consumo de água e energia.</td>
           <td class="center likert">
             <label><input type="radio" name="q3" value="1"> 1</label>
@@ -52,6 +59,7 @@
           </td>
         </tr>
         <tr>
+          <td width="10px">4</td>
           <td>Aplicações móveis são utilizadas para otimizar serviços como check-in/out, enquanto canais digitais e mídias sociais aprimoram a comunicação e interação com clientes.</td>
           <td class="center likert">
              <label><input type="radio" name="q4" value="1"> 1</label>
@@ -62,6 +70,7 @@
           </td>
         </tr>
         <tr>
+          <td width="10px">5</td>
           <td>Utilizamos computação em nuvem, assinaturas digitais e automação para reduzir o consumo de recursos, aprimorando a sustentabilidade e a eficiência operacional.</td>
           <td class="center likert">
              <label><input type="radio" name="q5" value="1"> 1</label>
@@ -72,6 +81,7 @@
           </td>
         </tr>
         <tr>
+          <td width="10px">6</td>
           <td>Buscamos ativamente novas tecnologias com impacto ambiental e social positivo e desenvolvemos ações sustentáveis para promover uma experiência inovadora com nossos clientes.</td>
           <td class="center likert">
             <label><input type="radio" name="q6" value="1"> 1</label>
@@ -82,6 +92,7 @@
           </td>
         </tr>
         <tr>
+          <td width="10px">7</td>
           <td>Avaliamos os impactos da digitalização na sustentabilidade e buscamos constantemente novas tecnologias com benefícios ambientais e sociais.</td>
           <td class="center likert">
             <label><input type="radio" name="q7" value="1"> 1</label>
@@ -93,7 +104,9 @@
         </tr>
       </tbody>
     </table>
-    <br><button id="0" type="button" onclick="modeloCalculo();somaIndividual(this);location.href='pagina2.html'">Próxima Página</button>
+    <br>
+    <button type="button" id="1" onclick="location.href='index.html';">Pgina inicial</button>
+    <button type="button" id="1" onclick="if(validarRespostas()){modeloCalculo();somaIndividual(this);location.href='pagina2.html';}">Próxima página</button>
   </form>
 </body>
 </html>

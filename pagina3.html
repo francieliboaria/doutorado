@@ -6,8 +6,13 @@
   <link rel="stylesheet" href="estilo.css">
   <script src="funcoes.js"></script>
 </head>
-<body>
-  <h2>Governança Digital Sustentável</h2>
+<body onload="recuperaSessaoNome()">
+<div id="cabecalho">
+  <h2>Perspectiva 3: Governança Digital Sustentável</h2>
+  <div id="imagem">
+    <img src="img/hotel.png"><br><label id="nomeHotel"></label>
+  </div>
+  </div>
   <form>
     <table>
       <thead>
@@ -107,7 +112,9 @@
         </tr>
       </tbody>
     </table>
-    <br><button id="2" type="button" onclick="modeloCalculo();somaIndividual(this);location.href='pagina4.html'">Próxima Página</button>
+    <br>
+    <button type="button" id="2" onclick="location.href='pagina2.html';">Voltar</button>
+    <button type="button" id="3" onclick="if(validarRespostas()){modeloCalculo();somaIndividual(this);location.href='pagina4.html';}">Próxima página</button>
   </form>
 </body>
 </html>

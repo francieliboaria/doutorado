@@ -2,6 +2,7 @@
 <html lang="pt-BR">
 <head>
 	<meta charset="UTF-8">
+	<link rel="stylesheet" href="estilo.css">
 	<title>Relatório da Avaliação</title>
     <script src="funcoes.js"></script>
 	<style>
@@ -41,11 +42,12 @@
         }
 	</style>
 </head>
-<body onload="relatorio()">
+<body onload="relatorio();recuperaSessaoNome()">
 
 <table>
 	<tr>
-        <td colspan="3" class="cabecalho"><h1>Relatório da Avaliação</h1></td>
+
+        <td colspan="3" class="cabecalho"><h1>Relatório da Avaliação do Hotel <label id="nomeHotel"></label></h1></td>
 	</tr>
 
 	<tr>
@@ -57,27 +59,28 @@
 	</tr>
 
 	<tr>
-		<td class="titulo-dimensao">Inovação e Sustentabilidade Organizacional (dimensão ORGANIZACIONAL)</td>
+
+		<td class="titulo-dimensao">1. Inovação e Sustentabilidade Organizacional (dimensão ORGANIZACIONAL)</td>
 		<td id="1"></td>
 	</tr>
 
 	<tr>
-		<td class="titulo-dimensao">Estratégia Digital Sustentável (dimensão ESTRATÉGIA)</td>
+		<td class="titulo-dimensao">2. Estratégia Digital Sustentável (dimensão ESTRATÉGIA)</td>
 		<td id="2"></td>
 	</tr>
 
 	<tr>
-		<td class="titulo-dimensao">Governança Digital Sustentável (dimensão GOVERNANÇA)</td>
+		<td class="titulo-dimensao">3. Governança Digital Sustentável (dimensão GOVERNANÇA)</td>
 		<td id="3"></td>
 	</tr>
 
 	<tr>
-		<td class="titulo-dimensao">Tecnologia e Gestão Organizacional para Sustentabilidade (dimensão TECNOLOGIA)</td>
+		<td class="titulo-dimensao">4. Tecnologia e Gestão Organizacional para Sustentabilidade (dimensão TECNOLOGIA)</td>
 		<td id="4"></td>
 	</tr>
 
 	<tr>
-		<td class="titulo-dimensao">Inovação Digital centrada no Cliente (dimensão FOCO NO CLIENTE)</td>
+		<td class="titulo-dimensao">5. Inovação Digital centrada no Cliente (dimensão FOCO NO CLIENTE)</td>
 		<td id="5"></td>
 	</tr>
 
@@ -86,6 +89,6 @@
 		<td colspan="2" id="total"></td>
 	</tr>
 </table>
-
+<button type="button" id="2" onclick="location.href='index.html';">Voltar ao iníio</button>
 </body>
 </html>

@@ -26,17 +26,80 @@ function relatorio(){
     else if(norm<0.8)n=4;
     else n=5;
     img=document.getElementById("imagem");
-    img.innerHTML="<img src='img/"+n+".png'>";
+    img.innerHTML="<img src='img/"+n+".png' width='200px' height='200px'>";
 
-    div.innerHTML=rel;
+    //div.innerHTML=rel;
+}
+function recuperaSessaoNome(){
+    const valorSalvo = localStorage.getItem("nomeSalvo");
+    if (valorSalvo !== null) {
+        document.getElementById("nomeHotel").innerText = valorSalvo;
+    }
+}
+function SessaoNome(){
+    const valor = document.getElementById("nome").value;
+    if(!valor){
+        const div = document.getElementById("alerta");
+
+        // Atualiza o conteúdo e mostra
+        div.innerHTML = `Por favor, informe o nome do Hotel`;
+        div.style.display = "block";
+
+        // Oculta depois de 3 segundos
+        setTimeout(() => {
+            div.style.display = "none";
+    }, 3000);
+
+        return false;
+    }
+    else {
+        localStorage.setItem("nomeSalvo", valor);
+        setTimeout(() => {
+            location.href = 'pagina1.html';
+    }, 100);
+    }
 }
 function somaIndividual(e){
     let sTotal1 = JSON.parse(localStorage.getItem('sTotal1')) || [];
     novo=(soma1+soma2+soma3+soma4+soma5)
-    let i = parseInt(e.id);
+    let i = parseInt(e.id)-1;
     sTotal1[i] = novo;
     localStorage.setItem('sTotal1', JSON.stringify(sTotal1));
 }
+function validarRespostas() {
+    const radios = document.querySelectorAll('input[type="radio"]').length;
+    const totalQuestoes = radios/5;
+
+    for (let i = 1; i <= totalQuestoes; i++) {
+        const opcoes = document.getElementsByName(`q${i}`);
+        let respondido = false;
+
+        for (let opcao of opcoes) {
+            if (opcao.checked) {
+                respondido = true;
+                break;
+            }
+        }
+
+        if (!respondido) {
+            const div = document.getElementById("alerta");
+
+            // Atualiza o conteúdo e mostra
+            div.innerHTML = `Por favor, responda à pergunta ${i} antes de continuar.`;
+            div.style.display = "block";
+
+            // Oculta depois de 3 segundos
+            setTimeout(() => {
+                div.style.display = "none";
+        }, 3000);
+
+            return false;
+        }
+    }
+
+    return true;
+}
+
 function modeloCalculo(){
     let vet = document.querySelectorAll('input[type="radio"]');
     vet.forEach(function(radio) {
