@@ -7,12 +7,12 @@
   <script src="funcoes.js"></script>
 
 </head>
-<body onload="recuperaSessaoNome()">
+<body onload="recuperaSessaoNome();carregarVozes();">
 <div id="alerta"></div>
 <div id="cabecalho">
   <h2>Perspectiva 2: Estratégia Digital Sustentável (dimensão ESTRATÉGIA)</h2>
   <div id="imagem">
-    <img src="img/hotel.png"><br><label id="nomeHotel"></label>
+    <img src="img/hotel.png" id="icohotel"><br><label id="nomeHotel"></label>
   </div>
   </div>
   <form>
@@ -20,6 +20,7 @@
       <thead>
         <tr>
           <th colspan="2">Pergunta</th>
+          <th width="80px">Voz</th>
           <th class="center">Nível de Aplicação (0 a 5)</th>
         </tr>
       </thead>
@@ -27,6 +28,8 @@
         <tr>
           <td width="10px">1</td>
           <td>A transformação digital é uma prioridade estratégica, integrando-se a todas as áreas para impulsionar a sustentabilidade.</td>
+          <td><img class="voz" src="img/fala.png" onclick="lerTexto(this.parentElement.previousElementSibling.innerText)">
+            <img class="voz" src="img/cala.png" onclick="pararLeitura()"></td>
           <td class="center likert">
             <label><input type="radio"  name="q1" value="1"> 1</label>
             <label><input type="radio"  name="q1" value="2"> 2</label>
@@ -39,6 +42,8 @@
         <tr>
           <td width="10px">2</td>
           <td>A alta administração assegura investimentos e recursos, promovendo reuniões periódicas para alinhar o uso de tecnologias digitais aos objetivos sustentáveis.</td>
+          <td><img class="voz" src="img/fala.png" onclick="lerTexto(this.parentElement.previousElementSibling.innerText)">
+            <img class="voz" src="img/cala.png" onclick="pararLeitura()"></td>
           <td class="center likert">
             <label><input type="radio"  name="q2" value="1"> 1</label>
             <label><input type="radio"  name="q2" value="2"> 2</label>
@@ -51,6 +56,8 @@
         <tr>
           <td width="10px">3</td>
           <td>A estratégia competitiva da organização está fundamentada na adoção de tecnologias digitais que reduzem custos, melhoram a qualidade dos serviços e reforçam a liderança de mercado.</td>
+          <td><img class="voz" src="img/fala.png" onclick="lerTexto(this.parentElement.previousElementSibling.innerText)">
+            <img class="voz" src="img/cala.png" onclick="pararLeitura()"></td>
           <td class="center likert">
             <l<label><input type="radio"  name="q3" value="1"> 1</label>
             <label><input type="radio"  name="q3" value="2"> 2</label>
@@ -63,6 +70,8 @@
         <tr>
           <td width="10px">4</td>
           <td>A seleção de funcionários valoriza habilidades digitais para apoiar metas sustentáveis da organização.</td>
+          <td><img class="voz" src="img/fala.png" onclick="lerTexto(this.parentElement.previousElementSibling.innerText)">
+            <img class="voz" src="img/cala.png" onclick="pararLeitura()"></td>
           <td class="center likert">
             <label><input type="radio"  name="q4" value="1"> 1</label>
             <label><input type="radio"  name="q4" value="2"> 2</label>
@@ -75,6 +84,8 @@
         <tr>
           <td width="10px">5</td>
           <td>Estabelecemos parcerias com fornecedores que agregam valor por meio de competências digitais para a sustentabilidade.</td>
+          <td><img class="voz" src="img/fala.png" onclick="lerTexto(this.parentElement.previousElementSibling.innerText)">
+            <img class="voz" src="img/cala.png" onclick="pararLeitura()"></td>
           <td class="center likert">
             <label><input type="radio"  name="q5" value="1"> 1</label>
             <label><input type="radio"  name="q5" value="2"> 2</label>
@@ -87,6 +98,8 @@
         <tr>
           <td width="10px">6</td>
           <td>Consultores externos auxiliam na formulação de políticas e programas para a sustentabilidade, incluindo iniciativas de transformação digital.</td>
+          <td><img class="voz" src="img/fala.png" onclick="lerTexto(this.parentElement.previousElementSibling.innerText)">
+            <img class="voz" src="img/cala.png" onclick="pararLeitura()"></td>
           <td class="center likert">
             <label><input type="radio"  name="q6" value="1"> 1</label>
             <label><input type="radio"  name="q6" value="2"> 2</label>
@@ -99,6 +112,8 @@
         <tr>
           <td width="10px">7</td>
           <td>A digitalização de processos gera eficiência operacional, otimizando consumo energético e monitorando impactos ambientais.</td>
+          <td><img class="voz" src="img/fala.png" onclick="lerTexto(this.parentElement.previousElementSibling.innerText)">
+            <img class="voz" src="img/cala.png" onclick="pararLeitura()"></td>
           <td class="center likert">
             <label><input type="radio"  name="q7" value="1"> 1</label>
             <label><input type="radio"  name="q7" value="2"> 2</label>
@@ -111,6 +126,8 @@
         <tr>
           <td width="10px">8</td>
           <td>O modelo de negócios é transformado por meio de plataformas integradas e estratégias sustentáveis, garantindo desempenho organizacional aprimorado e vantagem competitiva.</td>
+          <td><img class="voz" src="img/fala.png" onclick="lerTexto(this.parentElement.previousElementSibling.innerText)">
+            <img class="voz" src="img/cala.png" onclick="pararLeitura()"></td>
           <td class="center likert">
             <label><input type="radio"  name="q8" value="1"> 1</label>
             <label><input type="radio"  name="q8" value="2"> 2</label>
@@ -123,6 +140,8 @@
         <tr>
           <td width="10px">9</td>
           <td>A liderança de mercado e a qualidade do serviço são reforçadas pelo cumprimento de objetivos mensuráveis e pela avaliação do desempenho baseada na satisfação de clientes e parceiros.</td>
+          <td><img class="voz" src="img/fala.png" onclick="lerTexto(this.parentElement.previousElementSibling.innerText)">
+            <img class="voz" src="img/cala.png" onclick="pararLeitura()"></td>
           <td class="center likert">
             <label><input type="radio"  name="q9" value="1"> 1</label>
             <label><input type="radio"  name="q9" value="2"> 2</label>

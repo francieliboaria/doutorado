@@ -1,20 +1,59 @@
 let ultimoValorSelecionado = {};
 var soma1=0;soma2=0,soma3=0,soma4=0,soma5=0;
-function lerTexto(texto) {
-   console.log(texto);
-   const msg = new SpeechSynthesisUtterance(texto);
-    msg.lang = "pt-BR"; // Português do Brasil
-
-    // Escolhe uma voz em português, se disponível
-    const voices = speechSynthesis.getVoices();
-    const vozPt = voices.find(v => v.lang === 'pt-BR') || voices[0];
-    msg.voice = vozPt;
-
-    window.speechSynthesis.speak(msg);
+let vozes = [];
+function pararLeitura(){
+    speechSynthesis.cancel();
+}
+function mostrarErro(msg) {
+    document.getElementById("alerta").textContent = msg;
 }
 
-// Carregar as vozes disponíveis (alguns navegadores precisam disso)
-window.speechSynthesis.onvoiceschanged = () => {};
+// Carrega as vozes disponíveis
+function carregarVozes() {
+    vozes = speechSynthesis.getVoices();
+}
+
+if ('speechSynthesis' in window && 'SpeechSynthesisUtterance' in window) {
+    speechSynthesis.onvoiceschanged = carregarVozes;
+    carregarVozes();
+} else {
+    mostrarErro("Este navegador não suporta leitura em voz alta.");
+}
+
+function lerTexto(texto) {
+    if (!('speechSynthesis' in window) || !('SpeechSynthesisUtterance' in window)) {
+        mostrarErro("Seu navegador não suporta leitura em voz alta.");
+        return;
+    }
+
+    if (!texto || texto.trim() === "") {
+        mostrarErro("Texto vazio.");
+        return;
+    }
+
+    const fala = new SpeechSynthesisUtterance(texto.trim());
+    fala.lang = "pt-BR";
+
+    const voz = vozes.find(v => v.lang === 'pt-BR' || v.lang.startsWith('pt'));
+    if (voz) {
+        fala.voice = voz;
+    }
+
+    try {
+        speechSynthesis.cancel(); // cancela qualquer leitura anterior
+        speechSynthesis.speak(fala);
+
+        setTimeout(() => {
+            if (!speechSynthesis.speaking) {
+            mostrarErro("Falha ao iniciar leitura. Pode ser um problema do navegador.");
+        }
+    }, 1000);
+    } catch (erro) {
+        mostrarErro("Erro ao tentar falar o texto.");
+        console.error("Erro:", erro);
+    }
+}
+
 function relatorio(){
    let min=37;
     let max= 185
