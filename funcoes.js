@@ -1,5 +1,20 @@
 let ultimoValorSelecionado = {};
 var soma1=0;soma2=0,soma3=0,soma4=0,soma5=0;
+function lerTexto(texto) {
+   console.log(texto);
+   const msg = new SpeechSynthesisUtterance(texto);
+    msg.lang = "pt-BR"; // Português do Brasil
+
+    // Escolhe uma voz em português, se disponível
+    const voices = speechSynthesis.getVoices();
+    const vozPt = voices.find(v => v.lang === 'pt-BR') || voices[0];
+    msg.voice = vozPt;
+
+    window.speechSynthesis.speak(msg);
+}
+
+// Carregar as vozes disponíveis (alguns navegadores precisam disso)
+window.speechSynthesis.onvoiceschanged = () => {};
 function relatorio(){
    let min=37;
     let max= 185
